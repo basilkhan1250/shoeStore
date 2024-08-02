@@ -1,6 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 function Id() {
 
@@ -8,15 +7,15 @@ function Id() {
         <div>
             <h1>Welcome to ID </h1>
             <hr />
-            <button>
+            {/* <button>
                 <Link to={"/Id/Mobile"} >Mobile</Link>
             </button> {" "}
             <button>
                 <Link to={"/Id/Laptop"} >Laptop</Link>
-            </button>
-            <div>
+            </button> */}
+            {/* <div>
                 <Outlet></Outlet>
-            </div>
+            </div> */}
         </div>
     )
 }
