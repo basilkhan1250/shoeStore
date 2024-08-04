@@ -25,7 +25,6 @@ const ProductDetails = () => {
     const {name, img} = Product
     console.log(ProductID)
     console.log(shoes)
-
     return (
         <div key={ProductID}>
             <h2>{name}</h2>
@@ -36,4 +35,3 @@ const ProductDetails = () => {
 }
 
 export default ProductDetails;
-
