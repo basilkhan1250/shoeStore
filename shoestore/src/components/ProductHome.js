@@ -21,19 +21,52 @@ const ProductHome = () => {
         }
     };
 
+    const gridContainerStyle = {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '20px',
+        justifyContent: 'center',
+        padding: '10px',
+    };
+
+    const cardStyle = {
+        backgroundColor: '#f8f8f8', // Off-white background color
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+        textAlign: 'center',
+        transition: 'transform 0.3s',
+    };
+
+    const linkStyle = {
+        textDecoration: 'none',
+        color: 'inherit',
+    };
+
+    const imgStyle = {
+        width: '100%',
+        maxWidth: '350px',
+        height: 'auto',
+        borderRadius: '10px',
+        marginBottom: '10px',   
+    };
+
+    const titleStyle = {
+        margin: '0',
+    };
+
     return (
-        <div>
-            <ul>
-                {Object.entries(shoes).map(([ID, { name, img }]) => (
-                    <div key={ID}>
-                        <Link to={ID}>
-                            <h2>{name}</h2>
-                            <img src={img} alt={name} width={300}></img>
-                        </Link>
-                    </div>
-                ))}
-            </ul>
+        <div style={gridContainerStyle}>
+            {Object.entries(shoes).map(([ID, { name, img }]) => (
+                <div key={ID} style={cardStyle}>
+                    <Link to={ID} id="shoe" style={linkStyle}>
+                        <img src={img} alt={name} style={imgStyle} />
+                        <h2 style={titleStyle}>{name}</h2>
+                    </Link>
+                </div>
+            ))}
         </div>
-    )
-}
+    );
+};
+
 export default ProductHome;

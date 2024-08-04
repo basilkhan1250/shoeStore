@@ -1,7 +1,7 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
-
     const shoes = {
         "air-jordan-3-valor-blue": {
             name: "VALOUR BLUE",
@@ -20,18 +20,43 @@ const ProductDetails = () => {
         }
     };
 
-    const { ProductID } = useParams()
-    const Product = shoes[ProductID]
-    const {name, img} = Product
-    console.log(ProductID)
-    console.log(shoes)
-    return (
-        <div key={ProductID}>
-            <h2>{name}</h2>
-            <img src={img} alt={name} width={500} ></img>
-        </div>
-    )
+    const { ProductID } = useParams();
+    const Product = shoes[ProductID];
+    const { name, img } = Product;
 
-}
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        textAlign: 'center',
+        backgroundColor: '#f8f8f8', // Off-white background color for the container
+        padding: '10px',
+    };
+
+    const imgContainerStyle = {
+        backgroundColor: '#f8f8f8', // Off-white background color for the image container
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', // Optional: Add a subtle shadow for better separation
+    };
+
+    const imgStyle = {
+        width: '100%',
+        maxWidth: '500px',
+        height: 'auto',
+        borderRadius: '10px',
+    };
+
+    return (
+        <div style={containerStyle}>
+            <h2>{name}</h2>
+            <div style={imgContainerStyle}>
+                <img src={img} alt={name} style={imgStyle} />
+            </div>
+        </div>
+    );
+};
 
 export default ProductDetails;
