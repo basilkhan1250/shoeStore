@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-
 import React from "react";
 import { Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
@@ -45,8 +43,7 @@ function Header() {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
-                            }}
-                        >
+                            }}>
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
@@ -78,16 +75,3 @@ function Header() {
 }
 
 export default Header;
-
-// function Header() {
-//     return (
-//         <div>
-//             <nav>
-// <Link to={"/"} >Home</Link> {" | "}
-// <Link to={"/Products"} >Products</Link> {" | "}
-//             </nav>
-//         </div>
-//     )
-// }
-
-// export default Header;
